@@ -56,6 +56,28 @@
 
   main{max-width:760px;margin:0 auto;padding:0 20px 80px;background-color:#FFF6DE;}
 
+  .status-card{
+    margin-top:28px;background:linear-gradient(135deg,#212C42,#33415E);color:#F3ECD9;
+    border-radius:var(--radius);padding:22px 22px 20px;
+  }
+  .status-card .day-badge{
+    display:inline-block;background:var(--gold);color:#241A08;font-size:12px;font-weight:700;
+    padding:3px 12px;border-radius:999px;margin-bottom:10px;
+  }
+  .status-card h2{color:#fff;font-size:19px;margin-bottom:14px;}
+  .status-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
+  .status-row .dot{flex:none;width:10px;height:10px;border-radius:50%;margin-top:6px;}
+  .status-row .dot.ok{background:#7FBF6A;}
+  .status-row .dot.pending{background:#F0C960;}
+  .status-row .dot.watch{background:#D9714E;}
+  .status-row .label{font-size:13px;color:#B9AF95;display:block;}
+  .status-row .val{font-size:15px;color:#fff;}
+  .status-next{
+    margin-top:14px;background:rgba(255,255,255,.08);border:1px solid rgba(228,198,135,.3);
+    border-radius:10px;padding:12px 14px;font-size:14.5px;color:#F3ECD9;
+  }
+  .status-next strong{color:var(--gold-soft);}
+
   .train-card{margin-top:28px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
   .train-card h2{font-size:19.5px;margin-bottom:14px;}
   .train-row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line);font-size:16.5px;}
@@ -75,6 +97,16 @@
   .fest-item a{color:var(--gold-soft);font-size:15px;}
   .warn-box{background:rgba(168,69,47,.22);border:1px solid rgba(168,69,47,.55);border-radius:10px;padding:14px 16px;margin-top:16px;font-size:15.5px;color:#F3ECD9;position:relative;z-index:1;}
   .warn-box strong{color:var(--gold-soft);}
+
+  .quick-guide{margin-top:16px;}
+  .quick-guide .qg-title{font-family:"Zilla Slab",serif;font-size:13px;letter-spacing:.06em;color:var(--gold-soft);margin-bottom:10px;text-transform:uppercase;}
+  .qg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .qg-cell{
+    background:rgba(255,255,255,.07);border:1px solid rgba(228,198,135,.3);
+    border-radius:10px;padding:12px 13px;
+  }
+  .qg-cell .qg-h{font-weight:700;color:var(--gold-soft);font-size:13.5px;margin-bottom:4px;}
+  .qg-cell .qg-t{font-size:13px;color:#D2C9AE;line-height:1.6;margin:0;}
 
   section.day{padding-top:44px;}
   .day-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:4px;}
@@ -122,6 +154,12 @@
   }
   .info-modal .hidden-box .sec-label{color:var(--gold-soft);}
   .info-modal .hidden-box .sec-text{color:#F3ECD9;margin:0;}
+  .info-modal .trivia-box{
+    background:var(--paper);border:1px dashed var(--gold);border-radius:14px;
+    padding:14px 16px;margin-top:12px;
+  }
+  .info-modal .trivia-box .sec-label{color:var(--clay);}
+  .info-modal .trivia-box .sec-text{margin:0;color:var(--ink-soft);}
   .info-modal .close-btn{
     display:block;margin:20px auto 0;background:var(--ink);color:#fff;border:none;
     border-radius:999px;padding:11px 30px;font-size:15px;font-weight:700;cursor:pointer;
@@ -177,6 +215,19 @@
   }
   .weather-card .note{margin-top:14px;font-size:13.5px;color:#C7D9E5;}
 
+  .wx-advice{margin-top:18px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+  .wx-row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:13px 15px;border-bottom:1px solid var(--line);}
+  .wx-row:last-child{border-bottom:none;}
+  .wx-row .cond{font-weight:700;font-size:14px;color:var(--clay);}
+  .wx-row .advice{font-size:14.5px;color:var(--ink-soft);}
+
+  .wx-checks{display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+  .wx-checks label{
+    display:flex;align-items:center;gap:10px;background:var(--paper);
+    border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14.5px;color:var(--ink);
+  }
+  .wx-checks input[type="checkbox"]{width:18px;height:18px;accent-color:var(--clay);flex:none;}
+
   /* packing checklist */
   .pack-groups{display:grid;gap:18px;}
   .pack-group h3{font-size:16px;color:var(--clay);margin-bottom:8px;}
@@ -201,6 +252,35 @@
     display:flex;gap:18px;justify-content:center;margin-bottom:14px;font-family:"Zilla Slab",serif;font-size:17px;font-weight:700;
   }
   .em-sos a{color:#fff;text-decoration:none;}
+
+  .share-loc-btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+    background:var(--green);color:#fff;border:none;border-radius:12px;
+    padding:13px;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:14px;
+    font-family:"Noto Sans TC",sans-serif;
+  }
+  .contact-fields{display:grid;gap:10px;margin-top:14px;}
+  .contact-fields .cf-row{
+    display:grid;grid-template-columns:70px 1fr 1fr;gap:8px;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:8px 10px;
+  }
+  .contact-fields .cf-row .cf-label{font-size:13px;color:var(--ink-soft);font-weight:700;}
+  .contact-fields input{
+    border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:14px;
+    font-family:"Noto Sans TC",sans-serif;background:#fff;color:var(--ink);width:100%;
+  }
+  .contact-fields input::placeholder{color:#B9AF95;}
+
+  .route-grid{display:grid;gap:14px;margin-top:4px;}
+  .route-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+  .route-card.rain{background:#EAE3F0;border-color:#C9B8D9;}
+  .route-card .rt-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+  .route-card .rt-name{font-weight:700;font-size:16px;color:var(--ink);}
+  .route-card .rt-tag{font-size:12px;color:#fff;background:var(--clay);padding:2px 10px;border-radius:999px;}
+  .route-card.rain .rt-tag{background:#7A5C94;}
+  .route-card .rt-desc{font-size:13.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .route-card .rt-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--green);margin-bottom:8px;}
+  .route-card .rt-links a{font-size:13.5px;color:var(--clay);text-decoration:none;border-bottom:1px solid rgba(168,69,47,.35);margin-right:12px;}
 
   .map-group{margin-top:22px;}
   .souv-list{display:grid;gap:14px;}
@@ -260,7 +340,7 @@
   <div class="hero-rings"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#C08A2E" stroke-width="1"/><circle cx="100" cy="100" r="72" fill="none" stroke="#C08A2E" stroke-width="1"/><circle cx="100" cy="100" r="48" fill="none" stroke="#C08A2E" stroke-width="1"/></svg></div>
   <div class="eyebrow">Hualien · Ruisui → Ceroh · 2026</div>
   <h1>瑞穗．織羅部落豐年祭之旅</h1>
-  <p class="sub">2026.08.22（六）— 08.24（一）｜以瑞穗為據點，白天走進春日里織羅部落，入夜跟著鼓聲牽手。</p>
+  <p class="sub">2026.08.22（六）— 08.24（一）｜以瑞穗為據點，8/23 晚間跟著鼓聲走進春日里織羅部落，一起牽手。</p>
   <div class="members"><span>快樂三人旅行團</span></div>
   <div class="hero-meta">
     <div><span class="num">3 天 2 夜</span><span class="lbl">台鐵東部幹線出發</span></div>
@@ -286,6 +366,18 @@
 
 <main>
 
+  <section class="status-card">
+    <span class="day-badge">今天是 Day 1．8/22（六）</span>
+    <h2>📋 旅程狀態總覽</h2>
+    <div class="status-row"><span class="dot ok"></span><div><span class="label">已確認</span><span class="val">去程車票、瑞穗驛香緣民宿（8/22–24，2晚）</span></div></div>
+    <div class="status-row"><span class="dot ok"></span><div><span class="label">已確認</span><span class="val">織羅部落豐年祭日期：8月23日（日）晚間</span></div></div>
+    <div class="status-row"><span class="dot ok"></span><div><span class="label">已確認</span><span class="val">瑞穗↔春日里晚間接送：由當地朋友負責</span></div></div>
+    <div class="status-row"><span class="dot watch"></span><div><span class="label">需注意</span><span class="val">8月為颱風季，午後常有雷陣雨；春日里部分路段手機收訊不穩</span></div></div>
+    <div class="status-next">
+      <strong>下一步：</strong>瑞穗車站會合 → 放行李 Check-in → 8/22 白天自由活動，8/23 晚間前往春日里參加豐年祭
+    </div>
+  </section>
+
   <section id="trains" class="train-card">
     <h2>🚄 去回車次</h2>
     <div class="train-row"><span class="from">台北 → 瑞穗</span><span class="arrow">8/22（六）普悠瑪</span><span class="time num">07:05 → 10:02</span></div>
@@ -298,7 +390,7 @@
     <div class="ring-deco"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#E4C687" stroke-width="1"/><circle cx="100" cy="100" r="70" fill="none" stroke="#E4C687" stroke-width="1"/></svg></div>
     <span class="tag">本次行程指定部落</span>
     <h2>織羅部落 Ceroh．春日里</h2>
-    <p style="color:#D2C9AE;font-size:16px;max-width:52ch;">織羅部落位在玉里鎮春日里，193／109縣道穿過此地，是阿美族、客家、閩南、外省多元族群共同生活的聚落，也是北回歸線通過春日派出所前的所在地。從瑞穗車站可搭花蓮客運 1135 路線到春日站，班次不多，建議自駕或包車較有彈性。</p>
+    <p style="color:#D2C9AE;font-size:16px;max-width:52ch;">織羅部落位在玉里鎮春日里，193／109縣道穿過此地，是阿美族、客家、閩南、外省多元族群共同生活的聚落，也是北回歸線通過春日派出所前的所在地。這趟晚間往返春日里由當地朋友接送，不需自行規劃交通。</p>
     <button class="info-btn" onclick="openInfo('ceroh')">📖 Ceroh 名字的由來</button>
     <div class="fest-item">
       <div class="name">織羅部落跳舞廣場</div>
@@ -306,19 +398,23 @@
       <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 開啟地圖</a>
       <div><button class="info-btn" onclick="openInfo('wudaochang')" style="margin-top:10px;">📖 隱藏版：稻田藝術</button></div>
     </div>
-    <div class="fest-item">
-      <div class="name">織羅米86（文化導覽／DIY／風味餐窗口）</div>
-      <div class="addr">花蓮縣玉里鎮春日里泰林95-1號｜電話 0919-322737｜需提前約 14 天預約</div>
-      <a href="https://ceroh-mipaliw.rezio.shop/zh-TW" target="_blank">🌾 線上預約頁面</a>
+    <div class="callout" style="background:rgba(255,255,255,.08);border-color:rgba(228,198,135,.4);color:#D2C9AE;">
+      <strong style="color:#fff;">✅ 日期已確認：</strong>織羅部落豐年祭 2026 年確定於 <strong style="color:#fff;">8月23日（日）晚間</strong>舉行。
     </div>
-    <div class="warn-box">
-      <strong>⚠️ 日期請務必再確認一次：</strong>往年（114年度）玉里鎮公所公告的織羅部落豐年祭日期落在 8 月中旬，與這次規劃的 8/22–24 略有出入。出發前請務必致電玉里鎮公所原民課（03-8886009）或洽詢織羅米86窗口，確認 2026 年實際祭典日期與宴客時段。
+    <div class="quick-guide">
+      <div class="qg-title">⏱ 豐年祭 30 秒參與指南</div>
+      <div class="qg-grid">
+        <div class="qg-cell"><div class="qg-h">入場前</div><p class="qg-t">先確認今日是否開放、可以站立觀禮的區域在哪裡</p></div>
+        <div class="qg-cell"><div class="qg-h">活動中</div><p class="qg-t">不跨入儀式核心區域，受族人邀請才加入牽手</p></div>
+        <div class="qg-cell"><div class="qg-h">拍照時</div><p class="qg-t">先詢問是否可以拍攝，避免對族人臉部特寫</p></div>
+        <div class="qg-cell"><div class="qg-h">離場時</div><p class="qg-t">依現場引導離開，保持安靜並確認同行者都在</p></div>
+      </div>
     </div>
   </section>
 
   <!-- DAY 1 -->
   <section id="day1" class="day">
-    <div class="day-head"><span class="d num">01</span><h2>抵達瑞穗．織羅部落文化導覽</h2><span class="wk">8/22（六）</span></div>
+    <div class="day-head"><span class="d num">01</span><h2>抵達瑞穗．自由活動</h2><span class="wk">8/22（六）</span></div>
 
     <div class="item">
       <div class="time num">10:00</div>
@@ -341,38 +437,10 @@
     </div>
 
     <div class="item">
-      <div class="time num">11:00</div>
+      <div class="time num">午後</div>
       <div>
-        <h3>前往春日里織羅部落（自駕／包車）</h3>
-        <p>車程約 20–30 分鐘，公車 1135 班次不多，建議自駕或請民宿協助叫車。</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="time num">11:30</div>
-      <div>
-        <h3>米86 部落文化導覽：北回歸線．齊柏林樹．米彩繪 DIY</h3>
-        <p>「米86」是織羅部落在地小農團隊，名字取自阿美族語「換工」精神，導覽會走春日派出所前的北回歸線界標、齊柏林導演拍攝《看見台灣》時等待天氣放晴的那棵芒果樹、日治時期客家先民建立的五穀宮，也能安排米彩繪 DIY。<span class="urgent">須提前約 14 天預約</span>，建議這幾天內就先聯繫確認名額。</p>
-        <div class="links">
-          <a href="https://ceroh-mipaliw.rezio.shop/zh-TW" target="_blank">🌾 線上預約</a>
-          <button class="info-btn" onclick="openInfo('beihuei')">📖 北回歸線與齊柏林樹</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="time num">12:30</div>
-      <div>
-        <h3>部落風味午餐</h3>
-        <p>金多兒筍、放山雞鴨、竹筒飯這類在地食材做成的風味餐，可與導覽一併預約。</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="time num">14:00</div>
-      <div>
-        <h3>返回瑞穗．民宿休息</h3>
-        <p>上午走了不少路、吃了風味餐，回瑞穗驛香緣民宿休息一下。</p>
+        <h3>瑞穗自由活動</h3>
+        <p>今天沒有安排既定行程，明天晚上才是豐年祭重頭戲，今天可以隨興逛逛瑞穗市區，或參考 Day 2 的四條路線提早走一條（瑞穗牧場、掃叭石柱、天鶴茶園、瑞穗溫泉都可以）。</p>
       </div>
     </div>
 
@@ -380,19 +448,7 @@
       <div class="time num">18:00</div>
       <div>
         <h3>晚餐．瑞穗市區</h3>
-        <p>吃飽後準備出發前往春日里織羅部落。</p>
-      </div>
-    </div>
-
-    <div class="item night">
-      <div class="time num">19:00</div>
-      <div>
-        <h3>🔥 前往織羅部落（視當年公告）</h3>
-        <p>從瑞穗驅車前往春日里約 20–30 分鐘。若確認今晚有豐年祭活動，以觀禮者身份安靜參與，不主動進入祭場中心，拍照錄影請先徵求同意。若日期不在這幾天，這晚可以改成早點回瑞穗休息。</p>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 前往跳舞廣場</a>
-          <button class="info-btn" onclick="openInfo('wudaochang')">📖 隱藏版小知識</button>
-        </div>
+        <p>今晚不用外出趕行程，吃完可以早點回民宿休息，養足精神迎接明天的豐年祭之夜。</p>
       </div>
     </div>
   </section>
@@ -404,46 +460,52 @@
     <div class="item">
       <div class="time num">上午</div>
       <div>
-        <h3>白天自由行</h3>
-        <p>今天白天沒有排死行程，大家可以自己安排步調，晚一點回民宿休息準備晚上的豐年祭重頭戲。以下是幾個推薦選項：</p>
+        <h3>白天自由行．挑一條路線</h3>
+        <p>今天白天沒有排死行程，大家可以自己安排步調，晚一點回民宿休息準備晚上的豐年祭重頭戲。下面整理成四條路線，依當天狀態挑一條，或混搭都可以：</p>
       </div>
     </div>
 
     <div class="item">
-      <div class="time num">景點</div>
-      <div>
-        <h3>瑞穗牧場．掃叭石柱．天鶴茶觀光茶園</h3>
-        <p>瑞穗牧場可現榨鮮奶、餵牛餵鴕鳥，適合輕鬆散步；掃叭石柱是東部史前文化遺址；天鶴茶觀光茶園可以喝杯在地蜜香紅茶，三者都在瑞穗周邊，車程都不遠。</p>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗牧場" target="_blank">🐄 瑞穗牧場</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=掃叭石柱" target="_blank">🗿 掃叭石柱</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗天鶴茶觀光茶園" target="_blank">🍵 天鶴茶觀光茶園</a>
-          <button class="info-btn" onclick="openInfo('saoba')">📖 掃叭石柱的傳說</button>
+      <div></div>
+      <div class="route-grid">
+        <div class="route-card">
+          <div class="rt-head"><span class="rt-name">♨️ 輕鬆泡湯線</span><span class="rt-tag">前晚較累時</span></div>
+          <div class="rt-desc">昨晚參加祭典比較晚睡的話，今天走這條最省力：睡到自然醒，泡個溫泉放鬆。</div>
+          <div class="rt-meta"><span>⏱ 約半天</span><span>🚗 自駕／包車</span><span>💰 溫泉門票或湯屋費</span></div>
+          <div class="rt-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=瑞穗溫泉" target="_blank">♨️ 瑞穗溫泉</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=瑞穗天鶴茶觀光茶園" target="_blank">🍵 天鶴茶園喝茶</a>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="item">
-      <div class="time num">泡湯</div>
-      <div>
-        <h3>瑞穗溫泉</h3>
-        <p>瑞穗溫泉屬弱鹼性氯化物碳酸鹽泉，因含鐵、鋇礦物質氧化後呈金黃色，也被稱為「黃金湯」，泡完皮膚滑滑的，適合安排半天輕鬆泡湯行程。</p>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗溫泉" target="_blank">♨️ 瑞穗溫泉</a>
-          <button class="info-btn" onclick="openInfo('hotspring')">📖 黃金湯的故事</button>
+        <div class="route-card">
+          <div class="rt-head"><span class="rt-name">📖 文化散步線</span><span class="rt-tag">想了解在地歷史</span></div>
+          <div class="rt-desc">走訪掃叭石柱和舞鶴台地，順道逛逛瑞穗市區，步調較慢、多是平地散步。</div>
+          <div class="rt-meta"><span>⏱ 約 3–4 小時</span><span>🚗 自駕</span><span>🚶 步行量中等</span></div>
+          <div class="rt-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=掃叭石柱" target="_blank">🗿 掃叭石柱</a>
+            <button class="info-btn" onclick="openInfo('saoba')" style="margin:0;">📖 掃叭石柱的傳說</button>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="item">
-      <div class="time num">美食</div>
-      <div>
-        <h3>瑞穗車站周邊小吃</h3>
-        <p>瑞穗綠茶肉圓（用在地天鶴茶做的特色肉圓）、涂媽媽或宋媽媽肉粽、楓雅小吃（近 40 年老店，招牌炒飯、山海產熱炒）、瑞穗鮮奶豆花冰店（手作鮮奶豆花），都在車站周邊，適合白天走累了隨時補充。</p>
-        <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗綠茶肉圓" target="_blank">🍡 瑞穗綠茶肉圓</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=楓雅小吃+瑞穗" target="_blank">🍳 楓雅小吃</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗鮮奶豆花冰店" target="_blank">🍧 瑞穗鮮奶豆花冰店</a>
+        <div class="route-card">
+          <div class="rt-head"><span class="rt-name">🐄 親近自然線</span><span class="rt-tag">天氣好、體力夠</span></div>
+          <div class="rt-desc">瑞穗牧場餵牛、現榨鮮奶，戶外活動量較大，適合晴天精神好的時候。</div>
+          <div class="rt-meta"><span>⏱ 約 3 小時</span><span>☀️ 建議防曬、補水</span><span>🚶 步行量較高</span></div>
+          <div class="rt-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=瑞穗牧場" target="_blank">🐄 瑞穗牧場</a>
+          </div>
+        </div>
+
+        <div class="route-card rain">
+          <div class="rt-head"><span class="rt-name">☔ 雨天備案線</span><span class="rt-tag">午後雷雨／颱風外圍</span></div>
+          <div class="rt-desc">遇到下雨就改室內行程：民宿休息、喝茶、吃在地小吃，晚上再視天氣狀況決定要不要去春日里。</div>
+          <div class="rt-meta"><span>⏱ 彈性</span><span>🏠 室內為主</span><span>⏰ 最晚 17:30 前需決定晚上去留</span></div>
+          <div class="rt-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=瑞穗綠茶肉圓" target="_blank">🍡 瑞穗綠茶肉圓</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=楓雅小吃+瑞穗" target="_blank">🍳 楓雅小吃</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=瑞穗鮮奶豆花冰店" target="_blank">🍧 鮮奶豆花冰店</a>
+          </div>
         </div>
       </div>
     </div>
@@ -460,9 +522,9 @@
       <div class="time num">19:00</div>
       <div>
         <h3>🔥 織羅部落豐年祭（今晚重頭戲）</h3>
-        <p>白天已經認識過部落的人與地方，晚上再回到跳舞廣場，感受歌謠與圍圈舞。若族人邀請牽手同樂可以微笑加入，但不要主動闖入儀式核心區域。</p>
+        <p>今晚由當地朋友接送往返春日里，抵達跳舞廣場後感受歌謠與圍圈舞。若族人邀請牽手同樂可以微笑加入，但不要主動闖入儀式核心區域，記得跟朋友確認好接送集合時間。</p>
         <div class="links">
-          <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 前往跳舞廣場</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 跳舞廣場位置</a>
           <button class="info-btn" onclick="openInfo('wudaochang')">📖 隱藏版小知識</button>
         </div>
       </div>
@@ -518,16 +580,18 @@
       <ul>
         <li>含 4 客早餐</li>
         <li>入住：8/22（六）— 退房：8/24（一），共 2 晚</li>
+        <li>地址：花蓮縣瑞穗鄉瑞祥村溫泉一街8號</li>
+        <li>電話：<a href="tel:0388870175" style="color:var(--clay);font-weight:700;">03-8870175</a></li>
       </ul>
     </div>
+    <div class="links" style="margin-top:10px;"><a href="https://www.google.com/maps/search/?api=1&query=花蓮縣瑞穗鄉瑞祥村溫泉一街8號" target="_blank">📍 開啟地圖</a></div>
   </section>
 
   <section id="tips" class="info-block">
     <h2>行前備忘錄</h2>
     <div class="tips-grid">
-      <div class="tip"><strong>祭典日期務必再確認</strong>往年公告的織羅部落豐年祭日期與這次規劃的 8/22–24 有落差，出發前請務必向玉里鎮公所或織羅米86窗口確認今年實際日期。</div>
-      <div class="tip"><strong>瑞穗到春日交通</strong>公車 1135 班次不多，建議自駕、租車或請民宿協助叫車，車程約 20–30 分鐘，兩晚都要往返春日里。</div>
-      <div class="tip"><strong>部落體驗需提前 14 天預約</strong>米86 的文化導覽、米彩繪 DIY、風味餐名額有限，建議即刻聯繫窗口（0919-322737）確認名額。</div>
+      <div class="tip"><strong>豐年祭日期已確認</strong>織羅部落豐年祭確定於 8月23日（日）晚間舉行，不用再另外確認。</div>
+      <div class="tip"><strong>春日里晚間接送</strong>已由當地朋友負責接送，出發前記得跟朋友對好集合時間與地點即可，不需自行規劃交通。</div>
       <div class="tip"><strong>天氣</strong>8月花東縱谷炎熱且是颱風季，午後偶有雷陣雨，出發前 3 天請查詢最新天氣預報，備好雨具與防曬。</div>
     </div>
   </section>
@@ -539,6 +603,18 @@
       <p>8 月的花東縱谷正值颱風季，午後常有雷陣雨，實際天氣以出發前 2–3 天查詢的預報為準，這裡先幫你們放好查詢連結。</p>
       <a href="https://www.cwa.gov.tw/V8/C/W/County/County.html?CID=65" target="_blank">☁️ 中央氣象署．花蓮縣預報</a>
       <div class="note">若出發前有颱風警報或豪雨特報，記得回頭確認台鐵東部幹線是否有停駛公告，以及織羅部落豐年祭是否照常舉行。</div>
+    </div>
+    <div class="wx-advice">
+      <div class="wx-row"><div class="cond">☀️ 高溫</div><div class="advice">中午前後避免長時間戶外活動，記得補水、防曬與適度休息。</div></div>
+      <div class="wx-row"><div class="cond">🌦 午後雷雨</div><div class="advice">上午安排戶外行程，下午改茶園、室內餐食或回民宿休息。</div></div>
+      <div class="wx-row"><div class="cond">⛈ 大雨／豪雨</div><div class="advice">暫緩前往春日里，先確認道路狀況、接送方式與豐年祭是否照常舉行。</div></div>
+      <div class="wx-row"><div class="cond">🌀 颱風警報</div><div class="advice">優先確認台鐵是否停駛、住宿的取消規則，以及豐年祭官方公告。</div></div>
+      <div class="wx-row"><div class="cond">🌙 夜間活動延後</div><div class="advice">記得重新確認回程接送時間與同行者的集合地點。</div></div>
+    </div>
+    <div class="wx-checks">
+      <label><input type="checkbox"><span>出發前 72 小時：先看一次天氣趨勢，評估是否需要調整住宿或行程</span></label>
+      <label><input type="checkbox"><span>出發前 24 小時：確認台鐵動態、確認豐年祭與部落體驗是否照常</span></label>
+      <label><input type="checkbox"><span>出發當日：出門前再看一次即時預報，決定當天要不要帶雨具</span></label>
     </div>
   </section>
 
@@ -585,6 +661,7 @@
 
   <section id="emergency" class="info-block">
     <h2>🚨 當地緊急資訊</h2>
+    <button class="share-loc-btn" onclick="shareLocation()">📍 分享我目前的位置</button>
     <div class="em-sos"><a href="tel:110">110 警察</a><span>｜</span><a href="tel:119">119 消防／救護</a></div>
     <div class="em-list">
       <div class="em-row">
@@ -605,6 +682,13 @@
       </div>
     </div>
     <div class="callout" style="margin-top:14px;"><strong>山區訊號提醒</strong>——春日里、織羅部落一帶部分路段手機收訊不穩定，建議出發前先截圖或離線保存這頁行程與地圖，避免臨時查不到資訊。</div>
+
+    <div class="contact-fields">
+      <div class="cf-row"><span class="cf-label">萬權</span><input type="text" placeholder="聯絡電話" id="cf-tel-1"><input type="text" placeholder="過敏／慢性病備註（選填）" id="cf-note-1"></div>
+      <div class="cf-row"><span class="cf-label">小娟</span><input type="text" placeholder="聯絡電話" id="cf-tel-2"><input type="text" placeholder="過敏／慢性病備註（選填）" id="cf-note-2"></div>
+      <div class="cf-row"><span class="cf-label">Freddy</span><input type="text" placeholder="聯絡電話" id="cf-tel-3"><input type="text" placeholder="過敏／慢性病備註（選填）" id="cf-note-3"></div>
+    </div>
+    <div class="callout" style="margin-top:10px;">這幾欄填完會自動存在你手機瀏覽器裡（僅限這支手機），下次打開這頁不用重填；但不會同步給另外兩人的手機。</div>
   </section>
 
   <section id="souvenir" class="info-block">
@@ -687,7 +771,7 @@
         </a>
         <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里泰林95-1號" target="_blank">
           <span class="icon">🌾</span>
-          <span class="txt"><span class="t">織羅米86（文化導覽窗口）</span><span class="d">春日里泰林95-1號</span></span>
+          <span class="txt"><span class="t">織羅米86</span><span class="d">春日里泰林95-1號．在地小農團隊</span></span>
           <span class="go">開啟 ›</span>
         </a>
       </div>
@@ -887,6 +971,10 @@
       <div class="sec-label">🤫 隱藏版小知識</div>
       <p class="sec-text" id="infoHidden"></p>
     </div>
+    <div class="trivia-box">
+      <div class="sec-label">✨ 順帶一提</div>
+      <p class="sec-text" id="infoTrivia"></p>
+    </div>
     <button class="close-btn" onclick="closeInfo()">關閉</button>
   </div>
 </div>
@@ -914,37 +1002,43 @@
       tag: "地名由來．瑞穗鄉",
       title: "瑞穗，舊稱「水尾」",
       history: "瑞穗鄉舊稱「水尾」，意思是位在秀姑巒溪尾端的聚落。秀姑巒溪夏天以激流泛舟聞名，每年還會舉辦國際泛舟鐵人三項競賽，是花東縱谷最具代表性的水上活動之一。",
-      hidden: "除了觀光泛舟，部落族人其實有自己的傳統文化泛舟「Tatadok」，靠著世代累積的水文智慧解讀溪流，跟一般遊客搭乘的商業泛舟很不一樣，是知道的人不多的深度體驗。"
+      hidden: "除了觀光泛舟，部落族人其實有自己的傳統文化泛舟「Tatadok」，靠著世代累積的水文智慧解讀溪流，跟一般遊客搭乘的商業泛舟很不一樣，是知道的人不多的深度體驗。",
+      trivia: "瑞穗舞鶴台地從日治時期就開始種咖啡，「舞鶴咖啡」飄香至今已超過一甲子；每到花季，鄉間小徑上的阿勃勒盛開，滿樹金黃花瓣隨風飄落，被在地人稱作「黃金雨」。"
     },
     beihuei: {
       tag: "春日派出所",
       title: "北回歸線界標與齊柏林樹",
       history: "春日派出所大門前的地磚，用不同顏色標示出北回歸線的位置，兩腳一跨就從亞熱帶踏進熱帶；每年夏至太陽直射北回歸線時，這裡還能看到「立竿不見影」的天文奇景。派出所旁那棵南洋芒果樹，是導演齊柏林拍攝《看見台灣》9 個大腳印時，在此等待天氣放晴的地方，部落族人為了紀念他，將這棵樹命名為「齊柏林樹」。",
-      hidden: "派出所前還停靠著全台灣只有在玉里鎮才看得到的「行動郵車」，會沿著193縣道服務沿線部落的郵務，在這裡投遞明信片可以蓋到獨一無二的郵戳；派出所門口警察鴿標誌上方，還藏著一個阿美族「旭日」圖騰，抓對角度拍照，頭頂旭日就像戴上一頂皇冠。"
+      hidden: "派出所前還停靠著全台灣只有在玉里鎮才看得到的「行動郵車」，會沿著193縣道服務沿線部落的郵務，在這裡投遞明信片可以蓋到獨一無二的郵戳；派出所門口警察鴿標誌上方，還藏著一個阿美族「旭日」圖騰，抓對角度拍照，頭頂旭日就像戴上一頂皇冠。",
+      trivia: "台灣有好幾處北回歸線標誌地標，嘉義水上那座白色地標塔最有名、遊客也最多；但像春日派出所這樣把界線直接畫進日常辦公的派出所地磚裡、完全不張揚的版本，反而更少人知道。"
     },
     ceroh: {
       tag: "織羅部落．春日里",
       title: "Ceroh：源源不斷、斟滿的意思",
       history: "織羅部落原名 Ceroh，是阿美族語「不斷湧入、不斷加入」的意思，也就是源源不斷。族人陸續由奇美、富源、加納納等部落遷徙匯集至此，日治時期一度改名為「春日」，直到 2010 年才正式恢復登記部落名稱為「春日部落 Ceroh」。「米86」則源自阿美族語 Mipaliw（換工），是早期收成人力不足時，各家戶互相到彼此田裡幫忙插秧收割的傳統互助精神。",
-      hidden: "族人喝酒斟酒時，倒滿的那一刻會說一聲「Ceroh！」，跟部落的名字是同一個字——如果有族人幫你斟滿，可以順口回一句「Ceroh」，算是很生活化的雙關語，多數遊客都不知道。"
+      hidden: "族人喝酒斟酒時，倒滿的那一刻會說一聲「Ceroh！」，跟部落的名字是同一個字——如果有族人幫你斟滿，可以順口回一句「Ceroh」，算是很生活化的雙關語，多數遊客都不知道。",
+      trivia: "旅英返鄉的阿美族藝術家優席夫（Yosifu）就是織羅部落孕育出來的國際級創作者，他在部落開了「Tribal Queen Art & Café 部落皇后藝術咖啡館」，牆上掛著他的經典原畫，咖啡則是用部落自己種的阿拉比卡咖啡豆沖泡的。"
     },
     saoba: {
       tag: "縣定古蹟．瑞穗舞鶴台地",
       title: "掃叭石柱：3500年的謎團",
       history: "掃叭石柱是兩根相鄰的巨大石柱，高度分別為 5.75 公尺與 3.99 公尺，距今約 3000～3500 年，是台灣少見的史前巨石文化遺跡，列為縣定古蹟。「掃叭」是阿美族語「木板」的意思，相傳數百年前族人到舞鶴台地開墾時遇上暴風雨，撿拾木板遮雨，因而得名。關於石柱的由來，阿美族與撒奇萊雅族各自流傳著不同版本的傳說，例如族人蓋屋時唱錯祖先祈禱詞而被大風化為石柱、頭目將不祥的雙胞胎綁在門柱上化成石柱等，至今沒有定論。",
-      hidden: "很多人以為石柱一直都是這樣挺立的，其實原本的石柱是倒臥在地上的，直到 1970 年左右才由瑞穗鄉公所重新把它立起來——現在看到的「站姿」，其實只有 50 多年的歷史。"
+      hidden: "很多人以為石柱一直都是這樣挺立的，其實原本的石柱是倒臥在地上的，直到 1970 年左右才由瑞穗鄉公所重新把它立起來——現在看到的「站姿」，其實只有 50 多年的歷史。",
+      trivia: "掃叭石柱常被在地人拿來跟英國巨石陣、復活節島摩艾石像相提並論，戲稱是「花東縱谷版的巨石之謎」——重達數噸的石柱，史前人類究竟從哪裡搬來、又是怎麼豎立起來的，至今仍沒有確切答案。"
     },
     hotspring: {
       tag: "花東縱谷三大溫泉之一",
       title: "瑞穗溫泉．黃金湯的故事",
       history: "瑞穗溫泉早在西元 1919 年日治時期就已開發，最初是警察招待所的公共浴場。泉質屬弱鹼性氯化物碳酸鹽泉，溫度約 48 度，因水中鐵、鋇等礦物質遇空氣氧化，形成一層帶鏽味的金黃色結晶物，俗稱「湯花」，因此瑞穗溫泉也被稱為「黃金湯」。",
-      hidden: "當地還流傳「生男泉」的說法，相傳常泡瑞穗溫泉懷孕生男孩的機率較高，因此瑞穗溫泉又有「生男之泉」的別稱；另外瑞穗其實分「外溫泉」（現在市區這處）與「內溫泉」（其實就是相鄰的紅葉溫泉），兩者同源但因地理位置不同而分開命名，很多人不知道兩者其實是「親戚」。"
+      hidden: "當地還流傳「生男泉」的說法，相傳常泡瑞穗溫泉懷孕生男孩的機率較高，因此瑞穗溫泉又有「生男之泉」的別稱；另外瑞穗其實分「外溫泉」（現在市區這處）與「內溫泉」（其實就是相鄰的紅葉溫泉），兩者同源但因地理位置不同而分開命名，很多人不知道兩者其實是「親戚」。",
+      trivia: "對溫泉頗有研究的日本旅客特別鍾愛這種碳酸鹽泉，因為在日本本土反而少見，不少懂門道的日本泡湯客會專程安排行程只為了泡這一味。"
     },
     wudaochang: {
       tag: "織羅部落跳舞廣場",
       title: "豐年祭現場．稻田裡的秘密",
       history: "跳舞廣場是織羅部落每年舉辦豐年祭（Ilisin）的核心場地，族人在此圍圈牽手、唱誦祖先流傳下來的歌謠，感謝祖靈庇佑一年豐收。豐年祭不是為觀光客設計的表演，而是部落真實的年度祭儀，訪客以觀禮者的身份靜靜參與即可。",
-      hidden: "如果搭火車經過客城鐵橋，往織羅部落方向的稻田望去，部落曾經在稻田間種出台灣黑熊的大腳印和台灣圖形的稻田藝術，向齊柏林導演的空拍畫面致敬——這個圖案在地面上完全看不出來，只有從高處（火車車廂、空拍）才看得出全貌，是很多當地人才知道的隱藏彩蛋。"
+      hidden: "如果搭火車經過客城鐵橋，往織羅部落方向的稻田望去，部落曾經在稻田間種出台灣黑熊的大腳印和台灣圖形的稻田藝術，向齊柏林導演的空拍畫面致敬——這個圖案在地面上完全看不出來，只有從高處（火車車廂、空拍）才看得出全貌，是很多當地人才知道的隱藏彩蛋。",
+      trivia: "部落還發展出「稻田腳印餐桌」的特色體驗——收割後直接把長桌搬進空曠的稻田裡用餐，一邊吃著風味餐、一邊眺望縱谷風光，也是向齊柏林導演的大腳印畫面致敬的另一種方式，若有興趣可向米86窗口詢問是否有這類期間限定活動。"
     }
   };
 
@@ -955,11 +1049,42 @@
     document.getElementById('infoTitle').textContent = d.title;
     document.getElementById('infoHistory').textContent = d.history;
     document.getElementById('infoHidden').textContent = d.hidden;
+    document.getElementById('infoTrivia').textContent = d.trivia;
     document.getElementById('infoOverlay').classList.add('open');
   }
   function closeInfo(){
     document.getElementById('infoOverlay').classList.remove('open');
   }
+
+  function shareLocation(){
+    if(!navigator.geolocation){
+      alert('這個瀏覽器不支援定位功能，請改用手機內建地圖 App 分享位置。');
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(function(pos){
+      const lat = pos.coords.latitude.toFixed(6);
+      const lng = pos.coords.longitude.toFixed(6);
+      const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+      const text = `我目前的位置：${url}`;
+      if(navigator.share){
+        navigator.share({ title: '我的位置', text: text, url: url }).catch(()=>{});
+      } else {
+        navigator.clipboard && navigator.clipboard.writeText(text);
+        alert('位置連結已複製，貼給同行的人即可：\n' + url);
+      }
+    }, function(){
+      alert('無法取得位置，請確認已允許瀏覽器使用定位權限。');
+    });
+  }
+
+  // 同行者聯絡資料／備註：存在這支手機的瀏覽器裡，重新整理不會消失
+  document.querySelectorAll('.contact-fields input').forEach(function(input){
+    const saved = localStorage.getItem('trip-' + input.id);
+    if(saved) input.value = saved;
+    input.addEventListener('input', function(){
+      localStorage.setItem('trip-' + input.id, input.value);
+    });
+  });
 </script>
 
 </body>
