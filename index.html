@@ -89,6 +89,44 @@
   .item p{margin:0 0 8px;font-size:16.5px;color:var(--ink-soft);}
   .item .links a{font-size:15px;color:var(--clay);text-decoration:none;border-bottom:1px solid rgba(168,69,47,.35);margin-right:14px;}
 
+  .info-btn{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--gold);color:#241A08;border:none;border-radius:999px;
+    padding:6px 14px;font-size:13.5px;font-weight:700;cursor:pointer;
+    font-family:"Noto Sans TC",sans-serif;margin-right:10px;margin-top:4px;
+  }
+  .info-btn:active{opacity:0.8;}
+
+  .info-overlay{
+    display:none;position:fixed;inset:0;z-index:300;
+    background:rgba(35,26,14,.55);align-items:flex-end;justify-content:center;
+  }
+  .info-overlay.open{display:flex;}
+  .info-modal{
+    background:#FFFCF2;width:100%;max-width:620px;
+    border-radius:20px 20px 0 0;padding:26px 24px 30px;
+    max-height:82vh;overflow-y:auto;color-scheme:light;
+  }
+  .info-modal .tag{
+    font-family:"Zilla Slab",serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--clay);margin-bottom:6px;
+  }
+  .info-modal h3{font-family:"Noto Serif TC",serif;font-size:21px;margin-bottom:14px;color:var(--ink);}
+  .info-modal .sec-label{
+    font-family:"Zilla Slab",serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--green);margin-bottom:5px;
+  }
+  .info-modal .sec-text{font-size:15.5px;color:var(--ink);line-height:1.85;margin:0 0 18px;}
+  .info-modal .hidden-box{
+    background:var(--indigo);color:#F3ECD9;border-radius:14px;padding:16px 18px;
+  }
+  .info-modal .hidden-box .sec-label{color:var(--gold-soft);}
+  .info-modal .hidden-box .sec-text{color:#F3ECD9;margin:0;}
+  .info-modal .close-btn{
+    display:block;margin:20px auto 0;background:var(--ink);color:#fff;border:none;
+    border-radius:999px;padding:11px 30px;font-size:15px;font-weight:700;cursor:pointer;
+  }
+
   .item.night{background:linear-gradient(135deg,var(--indigo),var(--indigo-soft));color:#F3ECD9;border-radius:12px;padding:18px 16px;border-bottom:none;}
   .item.night .time{color:var(--gold-soft);}
   .item.night h3{color:#fff;}
@@ -125,7 +163,52 @@
   .tips-grid .tip{border-left:2px solid var(--green);padding-left:12px;font-size:16px;color:var(--ink-soft);}
   .tips-grid .tip strong{color:var(--ink);display:block;font-size:16.5px;margin-bottom:2px;}
 
+  /* weather card */
+  .weather-card{
+    background:linear-gradient(135deg,#5B8FAE,#33415E);color:#fff;
+    border-radius:var(--radius);padding:20px 22px;
+  }
+  .weather-card h3{font-size:18px;margin-bottom:8px;}
+  .weather-card p{font-size:15px;color:#DCE8F0;margin:0 0 14px;}
+  .weather-card a{
+    display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;
+    padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:700;
+  }
+  .weather-card .note{margin-top:14px;font-size:13.5px;color:#C7D9E5;}
+
+  /* packing checklist */
+  .pack-groups{display:grid;gap:18px;}
+  .pack-group h3{font-size:16px;color:var(--clay);margin-bottom:8px;}
+  .pack-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+  .pack-list li{
+    display:flex;align-items:center;gap:10px;background:var(--paper);
+    border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:15px;
+  }
+  .pack-list input[type="checkbox"]{width:18px;height:18px;accent-color:var(--clay);flex:none;}
+  .pack-list li:has(input:checked){opacity:0.5;}
+  .pack-list li:has(input:checked) span{text-decoration:line-through;}
+
+  /* emergency info */
+  .em-list{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+  .em-row{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);}
+  .em-row:last-child{border-bottom:none;}
+  .em-row .name{font-weight:700;font-size:15px;}
+  .em-row .addr{font-size:13px;color:var(--ink-soft);margin-top:2px;}
+  .em-row .tel{font-family:"Zilla Slab",serif;color:var(--clay);font-weight:700;font-size:16px;white-space:nowrap;text-decoration:none;}
+  .em-sos{
+    background:var(--clay);color:#fff;border-radius:12px;padding:14px 16px;
+    display:flex;gap:18px;justify-content:center;margin-bottom:14px;font-family:"Zilla Slab",serif;font-size:17px;font-weight:700;
+  }
+  .em-sos a{color:#fff;text-decoration:none;}
+
   .map-group{margin-top:22px;}
+  .souv-list{display:grid;gap:14px;}
+  .souv-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .souv-card .name{font-weight:700;font-size:16px;color:var(--ink);margin-bottom:4px;}
+  .souv-card .desc{font-size:14.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .souv-card .where{font-size:13px;color:var(--clay);}
+  .souv-card a{color:var(--clay);text-decoration:none;font-size:13px;border-bottom:1px solid rgba(150,58,34,.35);}
   .map-group .group-label{
     font-family:"Zilla Slab",serif;letter-spacing:.08em;text-transform:uppercase;
     font-size:14.5px;color:var(--clay);margin-bottom:8px;
@@ -193,6 +276,10 @@
   <a href="#day3">Day 3</a>
   <a href="#stay">住宿</a>
   <a href="#tips">備忘錄</a>
+  <a href="#weather">天氣</a>
+  <a href="#packing">打包清單</a>
+  <a href="#emergency">緊急資訊</a>
+  <a href="#souvenir">伴手禮</a>
   <a href="#maplist">總覽地圖</a>
   <a href="#handmap">手繪地圖</a>
 </nav>
@@ -212,10 +299,12 @@
     <span class="tag">本次行程指定部落</span>
     <h2>織羅部落 Ceroh．春日里</h2>
     <p style="color:#D2C9AE;font-size:16px;max-width:52ch;">織羅部落位在玉里鎮春日里，193／109縣道穿過此地，是阿美族、客家、閩南、外省多元族群共同生活的聚落，也是北回歸線通過春日派出所前的所在地。從瑞穗車站可搭花蓮客運 1135 路線到春日站，班次不多，建議自駕或包車較有彈性。</p>
+    <button class="info-btn" onclick="openInfo('ceroh')">📖 Ceroh 名字的由來</button>
     <div class="fest-item">
       <div class="name">織羅部落跳舞廣場</div>
       <div class="addr">花蓮縣玉里鎮春日里17鄰184號（109縣道94公里處，春日派出所前西行約170公尺）</div>
       <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 開啟地圖</a>
+      <div><button class="info-btn" onclick="openInfo('wudaochang')" style="margin-top:10px;">📖 隱藏版：稻田藝術</button></div>
     </div>
     <div class="fest-item">
       <div class="name">織羅米86（文化導覽／DIY／風味餐窗口）</div>
@@ -236,7 +325,10 @@
       <div>
         <h3>瑞穗車站會合</h3>
         <p>台北普悠瑪 10:02、台南新自強號 10:20 前後腳抵達，先在車站碰頭。</p>
-        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=瑞穗車站" target="_blank">📍 瑞穗車站</a></div>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗車站" target="_blank">📍 瑞穗車站</a>
+          <button class="info-btn" onclick="openInfo('ruisui')">📖 「瑞穗」的由來</button>
+        </div>
       </div>
     </div>
 
@@ -259,9 +351,12 @@
     <div class="item">
       <div class="time num">11:30</div>
       <div>
-        <h3>米86 部落文化導覽：北回歸線．齊柏林大樹．米彩繪 DIY</h3>
-        <p>「米86」是織羅部落在地小農團隊，名字取自阿美族語「換工」精神，導覽會走春日派出所前的北回歸線界標、齊柏林導演拍攝《看見台灣》時召集團隊乘涼討論的祈禱樹、日治時期客家先民建立的五穀宮，也能安排米彩繪 DIY。<span class="urgent">須提前約 14 天預約</span>，建議這幾天內就先聯繫確認名額。</p>
-        <div class="links"><a href="https://ceroh-mipaliw.rezio.shop/zh-TW" target="_blank">🌾 線上預約</a></div>
+        <h3>米86 部落文化導覽：北回歸線．齊柏林樹．米彩繪 DIY</h3>
+        <p>「米86」是織羅部落在地小農團隊，名字取自阿美族語「換工」精神，導覽會走春日派出所前的北回歸線界標、齊柏林導演拍攝《看見台灣》時等待天氣放晴的那棵芒果樹、日治時期客家先民建立的五穀宮，也能安排米彩繪 DIY。<span class="urgent">須提前約 14 天預約</span>，建議這幾天內就先聯繫確認名額。</p>
+        <div class="links">
+          <a href="https://ceroh-mipaliw.rezio.shop/zh-TW" target="_blank">🌾 線上預約</a>
+          <button class="info-btn" onclick="openInfo('beihuei')">📖 北回歸線與齊柏林樹</button>
+        </div>
       </div>
     </div>
 
@@ -294,7 +389,10 @@
       <div>
         <h3>🔥 前往織羅部落（視當年公告）</h3>
         <p>從瑞穗驅車前往春日里約 20–30 分鐘。若確認今晚有豐年祭活動，以觀禮者身份安靜參與，不主動進入祭場中心，拍照錄影請先徵求同意。若日期不在這幾天，這晚可以改成早點回瑞穗休息。</p>
-        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 前往跳舞廣場</a></div>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 前往跳舞廣場</a>
+          <button class="info-btn" onclick="openInfo('wudaochang')">📖 隱藏版小知識</button>
+        </div>
       </div>
     </div>
   </section>
@@ -320,6 +418,7 @@
           <a href="https://www.google.com/maps/search/?api=1&query=瑞穗牧場" target="_blank">🐄 瑞穗牧場</a>
           <a href="https://www.google.com/maps/search/?api=1&query=掃叭石柱" target="_blank">🗿 掃叭石柱</a>
           <a href="https://www.google.com/maps/search/?api=1&query=瑞穗天鶴茶觀光茶園" target="_blank">🍵 天鶴茶觀光茶園</a>
+          <button class="info-btn" onclick="openInfo('saoba')">📖 掃叭石柱的傳說</button>
         </div>
       </div>
     </div>
@@ -328,8 +427,11 @@
       <div class="time num">泡湯</div>
       <div>
         <h3>瑞穗溫泉</h3>
-        <p>瑞穗溫泉是花蓮知名的「美人湯」碳酸氫鈉泉，泡完皮膚滑滑的，適合安排半天輕鬆泡湯行程。</p>
-        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=瑞穗溫泉" target="_blank">♨️ 瑞穗溫泉</a></div>
+        <p>瑞穗溫泉屬弱鹼性氯化物碳酸鹽泉，因含鐵、鋇礦物質氧化後呈金黃色，也被稱為「黃金湯」，泡完皮膚滑滑的，適合安排半天輕鬆泡湯行程。</p>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=瑞穗溫泉" target="_blank">♨️ 瑞穗溫泉</a>
+          <button class="info-btn" onclick="openInfo('hotspring')">📖 黃金湯的故事</button>
+        </div>
       </div>
     </div>
 
@@ -359,7 +461,10 @@
       <div>
         <h3>🔥 織羅部落豐年祭（今晚重頭戲）</h3>
         <p>白天已經認識過部落的人與地方，晚上再回到跳舞廣場，感受歌謠與圍圈舞。若族人邀請牽手同樂可以微笑加入，但不要主動闖入儀式核心區域。</p>
-        <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 前往跳舞廣場</a></div>
+        <div class="links">
+          <a href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里+織羅部落跳舞廣場" target="_blank">📍 前往跳舞廣場</a>
+          <button class="info-btn" onclick="openInfo('wudaochang')">📖 隱藏版小知識</button>
+        </div>
       </div>
     </div>
   </section>
@@ -427,6 +532,109 @@
     </div>
   </section>
 
+  <section id="weather" class="info-block">
+    <h2>🌤️ 出發前天氣</h2>
+    <div class="weather-card">
+      <h3>瑞穗／玉里．8/22–24 天氣</h3>
+      <p>8 月的花東縱谷正值颱風季，午後常有雷陣雨，實際天氣以出發前 2–3 天查詢的預報為準，這裡先幫你們放好查詢連結。</p>
+      <a href="https://www.cwa.gov.tw/V8/C/W/County/County.html?CID=65" target="_blank">☁️ 中央氣象署．花蓮縣預報</a>
+      <div class="note">若出發前有颱風警報或豪雨特報，記得回頭確認台鐵東部幹線是否有停駛公告，以及織羅部落豐年祭是否照常舉行。</div>
+    </div>
+  </section>
+
+  <section id="packing" class="info-block">
+    <h2>🎒 行李打包清單</h2>
+    <div class="pack-groups">
+      <div class="pack-group">
+        <h3>白天／自由行</h3>
+        <ul class="pack-list">
+          <li><input type="checkbox"><span>防曬乳、帽子、太陽眼鏡</span></li>
+          <li><input type="checkbox"><span>輕便雨具（雨傘或雨衣）</span></li>
+          <li><input type="checkbox"><span>透氣好走的鞋子</span></li>
+          <li><input type="checkbox"><span>水壺／隨身水</span></li>
+        </ul>
+      </div>
+      <div class="pack-group">
+        <h3>泡湯（瑞穗溫泉）</h3>
+        <ul class="pack-list">
+          <li><input type="checkbox"><span>泳衣／泳褲（視湯屋或大眾池而定）</span></li>
+          <li><input type="checkbox"><span>毛巾、換洗衣物</span></li>
+          <li><input type="checkbox"><span>夾腳拖或防滑拖鞋</span></li>
+        </ul>
+      </div>
+      <div class="pack-group">
+        <h3>豐年祭夜晚</h3>
+        <ul class="pack-list">
+          <li><input type="checkbox"><span>薄外套（山區夜間偏涼）</span></li>
+          <li><input type="checkbox"><span>手電筒或手機手電筒（部落道路照明有限）</span></li>
+          <li><input type="checkbox"><span>防蚊液</span></li>
+          <li><input type="checkbox"><span>整齊得體的服裝（非特別盛裝，但避免太隨便）</span></li>
+        </ul>
+      </div>
+      <div class="pack-group">
+        <h3>其他必備</h3>
+        <ul class="pack-list">
+          <li><input type="checkbox"><span>現金（部落與部分店家不一定收行動支付）</span></li>
+          <li><input type="checkbox"><span>行動電源、充電線</span></li>
+          <li><input type="checkbox"><span>個人常備藥品</span></li>
+          <li><input type="checkbox"><span>身分證件（訂房、車票核對用）</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="emergency" class="info-block">
+    <h2>🚨 當地緊急資訊</h2>
+    <div class="em-sos"><a href="tel:110">110 警察</a><span>｜</span><a href="tel:119">119 消防／救護</a></div>
+    <div class="em-list">
+      <div class="em-row">
+        <div><div class="name">衛生福利部玉里醫院</div><div class="addr">花蓮縣玉里鎮中華路448號．區域內較完整的醫療院所，可看診／急診</div></div>
+        <a class="tel" href="tel:038886141">03-8886141</a>
+      </div>
+      <div class="em-row">
+        <div><div class="name">花蓮縣玉里鎮衛生所</div><div class="addr">花蓮縣玉里鎮中正路152號（如遇整修可能暫遷，建議先電話確認）</div></div>
+        <a class="tel" href="tel:038882046">03-8882046</a>
+      </div>
+      <div class="em-row">
+        <div><div class="name">瑞穗分駐所（警）</div><div class="addr">花蓮縣瑞穗鄉中正南路2號．住宿地點最近的警察單位</div></div>
+        <a class="tel" href="tel:038872057">03-8872057</a>
+      </div>
+      <div class="em-row">
+        <div><div class="name">花蓮縣警察局玉里分局</div><div class="addr">花蓮縣玉里鎮博愛路180號．春日里、織羅部落所轄分局</div></div>
+        <a class="tel" href="tel:038888568">03-8888568</a>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:14px;"><strong>山區訊號提醒</strong>——春日里、織羅部落一帶部分路段手機收訊不穩定，建議出發前先截圖或離線保存這頁行程與地圖，避免臨時查不到資訊。</div>
+  </section>
+
+  <section id="souvenir" class="info-block">
+    <h2>🎁 伴手禮／紀念品推薦</h2>
+    <div class="souv-list">
+      <div class="souv-card">
+        <div class="name">織羅米86 部落農產：稻米．葛鬱金．金多兒筍</div>
+        <div class="desc">最有紀念意義的一項——就是這趟參觀、吃風味餐的織羅部落自己種的作物，帶回去等於把這趟旅程的味道也帶回家。跟文化導覽一起詢問即可購買。</div>
+        <div class="where">📍 織羅米86（春日里泰林95-1號）</div>
+      </div>
+      <div class="souv-card">
+        <div class="name">瑞穗蜜香紅茶</div>
+        <div class="desc">瑞穗鄉的招牌茶品，茶葉經小綠葉蟬吸吮後帶有天然蜜香，沖泡後滋味甘甜，瑞穗鄉農會、天鶴茶觀光茶園都買得到，有茶包和茶葉禮盒兩種包裝，送禮自用都合適。</div>
+        <div class="where">📍 瑞穗鄉農會（中山路一段128號）／天鶴茶觀光茶園</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=瑞穗鄉農會" target="_blank">開啟地圖 ›</a>
+      </div>
+      <div class="souv-card">
+        <div class="name">瑞穗牧場鮮奶製品</div>
+        <div class="desc">現榨鮮奶、鮮奶饅頭是瑞穗牧場的招牌，適合當天吃、也有真空包裝可帶走，小朋友或不喝茶的人也會喜歡。</div>
+        <div class="where">📍 瑞穗牧場</div>
+      </div>
+      <div class="souv-card">
+        <div class="name">玉里廣盛堂羊羹．蕃薯酥</div>
+        <div class="desc">玉里在地老字號，羊羹是招牌，蕃薯酥、柚皮糖也是常被提到的人氣品項，離瑞穗車程約 20 分鐘，若有安排經過玉里市區可以順路採買。</div>
+        <div class="where">📍 廣盛堂（花蓮縣玉里鎮中山路）</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=廣盛堂羊羹" target="_blank">開啟地圖 ›</a>
+      </div>
+    </div>
+  </section>
+
   <section id="maplist" class="info-block">
     <h2>📍 住宿與景點總覽</h2>
     <p style="font-size:16px;color:var(--ink-soft);margin-top:-8px;margin-bottom:16px;">點下面任一項，會直接開啟 Google Maps 導航。</p>
@@ -474,7 +682,7 @@
         </a>
         <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=織羅部落+齊柏林+大樹" target="_blank">
           <span class="icon">🌳</span>
-          <span class="txt"><span class="t">齊柏林祈禱樹</span><span class="d">《看見台灣》拍攝地點</span></span>
+          <span class="txt"><span class="t">齊柏林樹</span><span class="d">《看見台灣》拍攝地點．春日派出所旁</span></span>
           <span class="go">開啟 ›</span>
         </a>
         <a class="map-row" href="https://www.google.com/maps/search/?api=1&query=花蓮縣玉里鎮春日里泰林95-1號" target="_blank">
@@ -515,7 +723,7 @@
   <section id="handmap" class="info-block">
     <h2>🖐️ 手繪地圖：這趟旅程的重要地點</h2>
     <div class="handmap-wrap">
-      <svg viewBox="0 0 700 980" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 700 1040" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
             <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7" result="noise"/>
@@ -523,91 +731,111 @@
           </filter>
         </defs>
 
-        <!-- title lockup -->
-        <text x="350" y="46" text-anchor="middle" font-family="Noto Serif TC, serif" font-weight="900" font-size="30" fill="#231A0E">瑞穗 → 春日．織羅 地圖</text>
-        <text x="350" y="70" text-anchor="middle" font-family="Zilla Slab, serif" font-size="13" letter-spacing="3" fill="#963A22">RUISUI TO CEROH · HAND-DRAWN</text>
+        <!-- direction context: top / bottom -->
+        <text x="350" y="18" text-anchor="middle" font-family="Noto Serif TC, serif" font-weight="700" font-size="13" fill="#5C5140">↑ 往花蓮市區（北）</text>
+        <text x="350" y="1030" text-anchor="middle" font-family="Noto Serif TC, serif" font-weight="700" font-size="13" fill="#5C5140">↓ 往台東市區（南）</text>
 
-        <!-- decorative mountains top -->
+        <!-- title lockup -->
+        <text x="350" y="76" text-anchor="middle" font-family="Noto Serif TC, serif" font-weight="900" font-size="30" fill="#231A0E">瑞穗 → 春日．織羅 地圖</text>
+        <text x="350" y="100" text-anchor="middle" font-family="Zilla Slab, serif" font-size="13" letter-spacing="3" fill="#963A22">RUISUI TO CEROH · HAND-DRAWN</text>
+
+        <!-- mountain ranges, both sides of the valley, labelled for orientation -->
         <g filter="url(#sketchy)" fill="none" stroke="#55693F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="0.55">
-          <path d="M20 130 L70 80 L110 130 L150 90 L190 130"/>
-          <path d="M510 130 L550 85 L590 130 L630 95 L680 130"/>
+          <path d="M10 200 L55 150 L95 200 L135 160 L175 200 L175 950 L10 950 Z" opacity="0"/>
+          <path d="M15 160 L60 115 L100 160 L140 120 L180 160"/>
+          <path d="M15 400 L60 355 L100 400 L140 360 L180 400"/>
+          <path d="M15 650 L60 605 L100 650 L140 610 L180 650"/>
+          <path d="M15 880 L60 835 L100 880 L140 840 L180 880"/>
+          <path d="M520 160 L560 115 L600 160 L640 120 L680 160"/>
+          <path d="M520 400 L560 355 L600 400 L640 360 L680 400"/>
+          <path d="M520 650 L560 605 L600 650 L640 610 L680 650"/>
+          <path d="M520 880 L560 835 L600 880 L640 840 L680 880"/>
         </g>
+        <text x="95" y="185" text-anchor="middle" font-family="Zilla Slab, serif" font-size="13" fill="#3E5A32" opacity="0.85" transform="rotate(-90 95 185)">中央山脈（西側）</text>
+        <text x="600" y="185" text-anchor="middle" font-family="Zilla Slab, serif" font-size="13" fill="#3E5A32" opacity="0.85" transform="rotate(90 600 185)">海岸山脈（東側）</text>
 
         <!-- river squiggle along the right side -->
         <g filter="url(#sketchy)" fill="none" stroke="#5B8FAE" stroke-width="4" stroke-linecap="round" opacity="0.6">
-          <path d="M600 150 C 580 260, 620 340, 595 430 C 575 510, 610 600, 590 700 C 575 770, 600 840, 585 900"/>
+          <path d="M600 190 C 580 300, 620 380, 595 470 C 575 550, 610 640, 590 740 C 575 810, 600 880, 585 940"/>
         </g>
-        <text x="612" y="480" font-family="Zilla Slab, serif" font-size="12" fill="#4472A0" transform="rotate(90 612 480)">秀姑巒溪</text>
+        <text x="612" y="520" font-family="Zilla Slab, serif" font-size="12" fill="#4472A0" transform="rotate(90 612 520)">秀姑巒溪（大致流向）</text>
+
+        <!-- 瑞穗大橋 landmark crossing the river -->
+        <g transform="translate(575,230)">
+          <path filter="url(#sketchy)" d="M-24 0 L24 0" stroke="#231A0E" stroke-width="4" stroke-linecap="round"/>
+          <text x="0" y="-10" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="12" fill="#231A0E">瑞穗大橋</text>
+        </g>
 
         <!-- main road, hand-drawn wobble -->
         <g filter="url(#sketchy)" fill="none" stroke="#231A0E" stroke-width="5" stroke-linecap="round">
-          <path d="M350 150 C 340 230, 360 300, 345 380 C 330 460, 355 520, 340 600 C 320 680, 350 740, 335 820 C 325 870, 340 900, 335 930"/>
+          <path d="M350 190 C 340 270, 360 340, 345 420 C 330 500, 355 560, 340 640 C 320 720, 350 780, 335 860 C 325 910, 340 940, 335 970"/>
         </g>
         <g filter="url(#sketchy)" fill="none" stroke="#F0C960" stroke-width="2" stroke-dasharray="10 10" stroke-linecap="round">
-          <path d="M350 150 C 340 230, 360 300, 345 380 C 330 460, 355 520, 340 600 C 320 680, 350 740, 335 820 C 325 870, 340 900, 335 930"/>
+          <path d="M350 190 C 340 270, 360 340, 345 420 C 330 500, 355 560, 340 640 C 320 720, 350 780, 335 860 C 325 910, 340 940, 335 970"/>
         </g>
-        <text x="380" y="500" font-family="Zilla Slab, serif" font-size="13" fill="#963A22" transform="rotate(8 380 500)">台9線／193縣道</text>
+        <text x="380" y="540" font-family="Zilla Slab, serif" font-size="13" fill="#963A22" transform="rotate(8 380 540)">台9線／193縣道</text>
 
         <!-- 20-30 min drive gap marker -->
-        <g transform="translate(300,650)">
+        <g transform="translate(300,690)">
           <path filter="url(#sketchy)" d="M0 0 L60 0" stroke="#963A22" stroke-width="2" stroke-dasharray="4 6"/>
           <text x="30" y="-10" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="13" fill="#963A22">車程約 20–30 分</text>
         </g>
 
         <!-- ===== Ruisui cluster (north) ===== -->
-        <text x="150" y="175" font-family="Noto Serif TC, serif" font-weight="900" font-size="18" fill="#212C42">瑞穗</text>
-        <path filter="url(#sketchy)" d="M120 178 C 200 170, 260 175, 330 172" stroke="#212C42" stroke-width="2" fill="none" opacity="0.5"/>
+        <text x="150" y="215" font-family="Noto Serif TC, serif" font-weight="900" font-size="18" fill="#212C42">瑞穗鄉</text>
+        <path filter="url(#sketchy)" d="M120 218 C 200 210, 260 215, 330 212" stroke="#212C42" stroke-width="2" fill="none" opacity="0.5"/>
 
         <!-- 瑞穗車站 -->
-        <g transform="translate(200,210)">
+        <g transform="translate(200,250)">
           <circle cx="0" cy="0" r="22" fill="#F0C960" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="7" text-anchor="middle" font-size="20">🚉</text>
           <text x="30" y="5" font-family="Noto Serif TC, serif" font-weight="700" font-size="15" fill="#231A0E">瑞穗車站</text>
         </g>
 
         <!-- 民宿 -->
-        <g transform="translate(120,270)">
+        <g transform="translate(120,310)">
           <circle cx="0" cy="0" r="22" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="7" text-anchor="middle" font-size="20">🏨</text>
           <text x="26" y="5" font-family="Noto Serif TC, serif" font-weight="700" font-size="15" fill="#231A0E">瑞穗驛香緣民宿</text>
         </g>
 
         <!-- 瑞穗牧場 -->
-        <g transform="translate(480,250)">
+        <g transform="translate(480,290)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">🐄</text>
           <text x="-26" y="4" text-anchor="end" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">瑞穗牧場</text>
         </g>
 
         <!-- 天鶴茶 -->
-        <g transform="translate(160,340)">
+        <g transform="translate(160,380)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">🍵</text>
           <text x="26" y="4" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">天鶴茶觀光茶園</text>
         </g>
 
         <!-- 掃叭石柱 -->
-        <g transform="translate(470,370)">
+        <g transform="translate(470,410)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">🗿</text>
           <text x="-26" y="4" text-anchor="end" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">掃叭石柱</text>
         </g>
 
         <!-- 瑞穗溫泉 -->
-        <g transform="translate(190,440)">
+        <g transform="translate(190,480)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">♨️</text>
           <text x="26" y="4" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">瑞穗溫泉</text>
         </g>
 
-        <!-- divider hand squiggle -->
-        <path filter="url(#sketchy)" d="M60 590 L640 590" stroke="#DCC98A" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+        <!-- divider hand squiggle + township boundary -->
+        <path filter="url(#sketchy)" d="M60 630 L640 630" stroke="#DCC98A" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+        <text x="350" y="622" text-anchor="middle" font-family="Zilla Slab, serif" font-size="11" fill="#963A22" opacity="0.8">－－ 瑞穗鄉／玉里鎮 行政區交界（示意）－－</text>
 
-        <!-- ===== Ceroh cluster (south) ===== -->
-        <text x="150" y="640" font-family="Noto Serif TC, serif" font-weight="900" font-size="18" fill="#212C42">春日里．織羅部落</text>
+        <!-- ===== Ceroh cluster (south, 玉里鎮) ===== -->
+        <text x="150" y="680" font-family="Noto Serif TC, serif" font-weight="900" font-size="18" fill="#212C42">玉里鎮．春日里織羅部落</text>
 
         <!-- 春日派出所 / 北回歸線 -->
-        <g transform="translate(470,690)">
+        <g transform="translate(470,730)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">📍</text>
           <text x="-26" y="0" text-anchor="end" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">春日派出所</text>
@@ -615,21 +843,21 @@
         </g>
 
         <!-- 齊柏林大樹 -->
-        <g transform="translate(180,730)">
+        <g transform="translate(180,770)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">🌳</text>
-          <text x="26" y="4" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">齊柏林祈禱樹</text>
+          <text x="26" y="4" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">齊柏林樹</text>
         </g>
 
         <!-- 米86 -->
-        <g transform="translate(460,800)">
+        <g transform="translate(460,840)">
           <circle cx="0" cy="0" r="20" fill="#FFEDBE" stroke="#231A0E" stroke-width="2.5" filter="url(#sketchy)"/>
           <text x="0" y="6" text-anchor="middle" font-size="18">🌾</text>
           <text x="-26" y="4" text-anchor="end" font-family="Noto Serif TC, serif" font-weight="700" font-size="14" fill="#231A0E">織羅米86</text>
         </g>
 
         <!-- 跳舞廣場（重點放大） -->
-        <g transform="translate(230,880)">
+        <g transform="translate(230,920)">
           <circle cx="0" cy="0" r="30" fill="#212C42" stroke="#F0C960" stroke-width="3" filter="url(#sketchy)"/>
           <text x="0" y="9" text-anchor="middle" font-size="26">🔥</text>
           <text x="40" y="-2" font-family="Noto Serif TC, serif" font-weight="900" font-size="17" fill="#963A22">織羅部落跳舞廣場</text>
@@ -637,17 +865,31 @@
         </g>
 
         <!-- compass doodle -->
-        <g transform="translate(640,60)" filter="url(#sketchy)">
+        <g transform="translate(640,100)" filter="url(#sketchy)">
           <circle cx="0" cy="0" r="24" fill="none" stroke="#231A0E" stroke-width="2"/>
           <path d="M0 -18 L6 0 L0 18 L-6 0 Z" fill="#963A22"/>
           <text x="0" y="-30" text-anchor="middle" font-family="Zilla Slab, serif" font-size="12" fill="#231A0E">N</text>
         </g>
       </svg>
     </div>
-    <div class="handmap-note">示意圖，非等比例比例尺，實際路線請以 Google Maps 為準</div>
+    <div class="handmap-note">示意圖，方位與相對距離供辨識參考，非等比例比例尺，實際路線與座標請以 Google Maps 為準</div>
   </section>
 
 </main>
+
+<div class="info-overlay" id="infoOverlay" onclick="if(event.target===this) closeInfo()">
+  <div class="info-modal">
+    <div class="tag" id="infoTag">在地文史</div>
+    <h3 id="infoTitle"></h3>
+    <div class="sec-label">文史與由來</div>
+    <p class="sec-text" id="infoHistory"></p>
+    <div class="hidden-box">
+      <div class="sec-label">🤫 隱藏版小知識</div>
+      <p class="sec-text" id="infoHidden"></p>
+    </div>
+    <button class="close-btn" onclick="closeInfo()">關閉</button>
+  </div>
+</div>
 
 <footer>
   祝快樂三人旅行團這趟織羅部落之行，白天走得盡興，夜裡牽手跳得開心。
@@ -666,6 +908,58 @@
   }
   window.addEventListener('scroll', setActive);
   setActive();
+
+  const placeInfo = {
+    ruisui: {
+      tag: "地名由來．瑞穗鄉",
+      title: "瑞穗，舊稱「水尾」",
+      history: "瑞穗鄉舊稱「水尾」，意思是位在秀姑巒溪尾端的聚落。秀姑巒溪夏天以激流泛舟聞名，每年還會舉辦國際泛舟鐵人三項競賽，是花東縱谷最具代表性的水上活動之一。",
+      hidden: "除了觀光泛舟，部落族人其實有自己的傳統文化泛舟「Tatadok」，靠著世代累積的水文智慧解讀溪流，跟一般遊客搭乘的商業泛舟很不一樣，是知道的人不多的深度體驗。"
+    },
+    beihuei: {
+      tag: "春日派出所",
+      title: "北回歸線界標與齊柏林樹",
+      history: "春日派出所大門前的地磚，用不同顏色標示出北回歸線的位置，兩腳一跨就從亞熱帶踏進熱帶；每年夏至太陽直射北回歸線時，這裡還能看到「立竿不見影」的天文奇景。派出所旁那棵南洋芒果樹，是導演齊柏林拍攝《看見台灣》9 個大腳印時，在此等待天氣放晴的地方，部落族人為了紀念他，將這棵樹命名為「齊柏林樹」。",
+      hidden: "派出所前還停靠著全台灣只有在玉里鎮才看得到的「行動郵車」，會沿著193縣道服務沿線部落的郵務，在這裡投遞明信片可以蓋到獨一無二的郵戳；派出所門口警察鴿標誌上方，還藏著一個阿美族「旭日」圖騰，抓對角度拍照，頭頂旭日就像戴上一頂皇冠。"
+    },
+    ceroh: {
+      tag: "織羅部落．春日里",
+      title: "Ceroh：源源不斷、斟滿的意思",
+      history: "織羅部落原名 Ceroh，是阿美族語「不斷湧入、不斷加入」的意思，也就是源源不斷。族人陸續由奇美、富源、加納納等部落遷徙匯集至此，日治時期一度改名為「春日」，直到 2010 年才正式恢復登記部落名稱為「春日部落 Ceroh」。「米86」則源自阿美族語 Mipaliw（換工），是早期收成人力不足時，各家戶互相到彼此田裡幫忙插秧收割的傳統互助精神。",
+      hidden: "族人喝酒斟酒時，倒滿的那一刻會說一聲「Ceroh！」，跟部落的名字是同一個字——如果有族人幫你斟滿，可以順口回一句「Ceroh」，算是很生活化的雙關語，多數遊客都不知道。"
+    },
+    saoba: {
+      tag: "縣定古蹟．瑞穗舞鶴台地",
+      title: "掃叭石柱：3500年的謎團",
+      history: "掃叭石柱是兩根相鄰的巨大石柱，高度分別為 5.75 公尺與 3.99 公尺，距今約 3000～3500 年，是台灣少見的史前巨石文化遺跡，列為縣定古蹟。「掃叭」是阿美族語「木板」的意思，相傳數百年前族人到舞鶴台地開墾時遇上暴風雨，撿拾木板遮雨，因而得名。關於石柱的由來，阿美族與撒奇萊雅族各自流傳著不同版本的傳說，例如族人蓋屋時唱錯祖先祈禱詞而被大風化為石柱、頭目將不祥的雙胞胎綁在門柱上化成石柱等，至今沒有定論。",
+      hidden: "很多人以為石柱一直都是這樣挺立的，其實原本的石柱是倒臥在地上的，直到 1970 年左右才由瑞穗鄉公所重新把它立起來——現在看到的「站姿」，其實只有 50 多年的歷史。"
+    },
+    hotspring: {
+      tag: "花東縱谷三大溫泉之一",
+      title: "瑞穗溫泉．黃金湯的故事",
+      history: "瑞穗溫泉早在西元 1919 年日治時期就已開發，最初是警察招待所的公共浴場。泉質屬弱鹼性氯化物碳酸鹽泉，溫度約 48 度，因水中鐵、鋇等礦物質遇空氣氧化，形成一層帶鏽味的金黃色結晶物，俗稱「湯花」，因此瑞穗溫泉也被稱為「黃金湯」。",
+      hidden: "當地還流傳「生男泉」的說法，相傳常泡瑞穗溫泉懷孕生男孩的機率較高，因此瑞穗溫泉又有「生男之泉」的別稱；另外瑞穗其實分「外溫泉」（現在市區這處）與「內溫泉」（其實就是相鄰的紅葉溫泉），兩者同源但因地理位置不同而分開命名，很多人不知道兩者其實是「親戚」。"
+    },
+    wudaochang: {
+      tag: "織羅部落跳舞廣場",
+      title: "豐年祭現場．稻田裡的秘密",
+      history: "跳舞廣場是織羅部落每年舉辦豐年祭（Ilisin）的核心場地，族人在此圍圈牽手、唱誦祖先流傳下來的歌謠，感謝祖靈庇佑一年豐收。豐年祭不是為觀光客設計的表演，而是部落真實的年度祭儀，訪客以觀禮者的身份靜靜參與即可。",
+      hidden: "如果搭火車經過客城鐵橋，往織羅部落方向的稻田望去，部落曾經在稻田間種出台灣黑熊的大腳印和台灣圖形的稻田藝術，向齊柏林導演的空拍畫面致敬——這個圖案在地面上完全看不出來，只有從高處（火車車廂、空拍）才看得出全貌，是很多當地人才知道的隱藏彩蛋。"
+    }
+  };
+
+  function openInfo(key){
+    const d = placeInfo[key];
+    if(!d) return;
+    document.getElementById('infoTag').textContent = d.tag;
+    document.getElementById('infoTitle').textContent = d.title;
+    document.getElementById('infoHistory').textContent = d.history;
+    document.getElementById('infoHidden').textContent = d.hidden;
+    document.getElementById('infoOverlay').classList.add('open');
+  }
+  function closeInfo(){
+    document.getElementById('infoOverlay').classList.remove('open');
+  }
 </script>
 
 </body>
